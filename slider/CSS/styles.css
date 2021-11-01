@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 50px;
+    
+}
+
+.points {
+    text-align: right;
+    margin: 20px;
+
+}
+.verticalTrack {
+    height: 550px;
+    width: 10px;
+    border-radius: 55%;
+    background-color: #555;
+    position: relative;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 9;
+}
+
+.button {
+    height: 100px;
+    width: 50px;
+    background-color: rgb(196, 185, 185);
+    border-radius: 10%;
+}
+
+#button {
+    position: relative;
+    text-align: center;
+    border-radius: 6px;    
+    margin: 0 auto;
+}
+
+#button a {
+    position: relative;
+}
+
+.hr-line {
+    width: 100px;
+    height: 3px;
+    background-color: gray;
+  }
