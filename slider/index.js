@@ -1,7 +1,7 @@
 var dragValue;
 
 function move(id) {
-    var element = document.getElementById("buttom");
+    var element = document.getElementById("button");
     element.style.position = "absolute";
     element.onmousedown = function(){
         dragValue = element;
@@ -20,3 +20,6 @@ document.onmousemove = function(e){
     dragValue.style.top = y + "px";
 }
 
+$( ".selector" ).dragValue({
+    containment: "parent" 
+}); 
