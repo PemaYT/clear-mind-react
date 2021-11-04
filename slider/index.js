@@ -2,24 +2,24 @@ var dragValue;
 
 function move(id) {
     var element = document.getElementById("button");
-    element.style.position = "absolute";
     element.onmousedown = function(){
         dragValue = element;
+
+        console.log("dragValue: ", dragValue);
     }
 }
 
 document.onmouseup= function(e){
     dragValue = null;
-}
+}           
 
 document.onmousemove = function(e){
-    var x = e.pageX;
     var y = e.pageY;
 
-    dragValue.style.left = x + "px";
+    console.log("e.pageY: ", e.pageY);
+
     dragValue.style.top = y + "px";
+
 }
 
-$( ".selector" ).dragValue({
-    containment: "parent" 
-}); 
+
