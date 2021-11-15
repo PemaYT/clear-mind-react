@@ -1,75 +1,66 @@
 var dragValue;
 var sliderButton = document.getElementById("button");
-var maxNumParagraph = document.getElementById("maxNum");
-
-// const maxNum = document.getElementById("maxNum").innerHTML;
-// const minNum = document.getElementById("minNum").innerHTML;
+// var maxNumParagraph = document.getElementById("maxNum");
 
 function move(id) {
-  var element = document.getElementById("button");
-  element.onmousedown = function(){
+  var element = sliderButton;
+  element.onmousedown = function() {
     dragValue = element;
     // console.log("dragValue: ", dragValue);
   }
 }
 
-document.onmouseup= function(e){
+document.onmouseup= function(e) {
   dragValue = null;
 }           
 
-document.onmousemove = function(e){
+document.onmousemove = function(e) {
   var y = e.pageY;
-  // console.log("e.pageY: ", e.pageY);
-  dragValue.style.top = y + "px";   
+  // console.log("y: ", y);
+  dragValue.style.top = y + "px";  
+  if (y <= 0) {
+    // if (y >= 484){
+    dragValue = null;
+    // }
+  }
 }
+
+
+
+  //how the order of the code matters - buttons goes up more than 100
+  //why a second click is needed (it shouldn't release the button)
+
+  //restrict sliderButton in between maxNum and minNum
+  //prevent slider from going too up
+  //create a hard border
+  //make a function that tells the button not to pass the hard border
+  //
+  //prevent slider from going too down
 
 function applySliderConfigs({ color, size, scale, defaultPosition }) {
   if (color !== undefined) {
-    btn.style.backgroundColor = color;
+    sliderButton.style.backgroundColor = color;
   }
   if (size !== undefined) {
-    btn.style.height = size;
+    sliderButton.style.height = size;
   }
   if (scale !== undefined) {
-    btn.innerHTML = scale;
+    sliderButton.innerHTML = scale;
   }
   if (defaultPosition !== undefined) {
-    btn.style.top = defaultPosition;
+    sliderButton.style.top = defaultPosition;
   }
 }
 
-// applySliderConfigs({ color: "green", size: "150px", scale: 0 });
+applySliderConfigs({ color: "pink", size: "100px", scale: none });
 
-function applyButtonColor(color){
-  console.log((document.getElementById("button")));
-  document.getElementById("button").style.backgroundColor = "yellow";
-}
-
-applyButtonColor();
-
-// practice:
-// function buttonBackgroundColor(){
-//   console.log("green");
+// function applyButtonColor(color){
+//   sliderButton.style.backgroundColor = "pink";
 // }
 
-// buttonBackgroundColor();
+// applyButtonColor();
 
-
-// function applySliderConfigs(color, size, range, defaultPosition) {
-//     document.getElementById("mySliderIcon").style.backgroundColor = color;
-//     //set size
-//     //set slider range
-//     //set default slider position
-
-//     function applySliderConfigs(color, size, scale, defaultPosition) {
-//         document.getElementById("mySliderIcon").style.backgroundColor = color;
-//       }
-//       applySliderConfigs("coral");
-//       function writeSliderRange(array) {
-//         //user passes in values
-//         //iterate through the values
-//         //store range in a variable
-//         //loop through array
-//         //create a div for each value of the array
-//         //append those divs to the DOM inside the container
-//       } 
+function changeColor(){
+  let color = document.querySelector("#colorInputText").value;
+  sliderButton.style.backgroundColor = color;
+}
