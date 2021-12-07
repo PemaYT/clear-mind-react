@@ -57,3 +57,10 @@
     height: 3px;
     background-color: gray;
   }
+
+.buttonSelection {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 120px;
+    padding-left: 160px;
+}
